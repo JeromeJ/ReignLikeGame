@@ -27,7 +27,7 @@ public class IndicatorManager : MonoBehaviour
 
         foreach(Image indicator in m_indicators)
         {
-            indicator.fillAmount = 0;
+            indicator.fillAmount = .5f;
         }
     }
 
