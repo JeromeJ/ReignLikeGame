@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -19,6 +20,8 @@ public class GameController : MonoBehaviour
 
     public Image[] m_indicators;
 
+    public System.Random m_r;
+
     #endregion
 
     #region Public void
@@ -27,11 +30,9 @@ public class GameController : MonoBehaviour
 
     public void PickAnswer(bool _answer)
     {
-        System.Random r = new System.Random();
+        Image selectedIndicator = m_indicators[m_r.Next(m_indicators.Length)];
 
-        Image selectedIndicator = m_indicators[r.Next(m_indicators.Length)];
-
-        selectedIndicator.fillAmount = selectedIndicator.fillAmount + 0.2f * (r.Next(2) == 1 ? 1 : -1);
+        selectedIndicator.fillAmount = selectedIndicator.fillAmount + 0.2f * (m_r.Next(2) == 1 ? 1 : -1);
 
         Debug.Log("Picked " + _answer + " => " + selectedIndicator + " " + selectedIndicator.fillAmount);
 
@@ -44,6 +45,8 @@ public class GameController : MonoBehaviour
 
     private void Awake ()
     {
+        m_r = new System.Random();
+
         m_indicators = m_indicatorManager.m_indicators;
 
         LoadNext();
@@ -55,25 +58,38 @@ public class GameController : MonoBehaviour
 
     private void LoadNext()
     {
-        System.Random r = new System.Random();
-
         Sprite newSprite;
 
-        do
-        {
-            // Ensure you don't roll the same Sprite twice in a row.
-            newSprite = m_sprites[r.Next(m_sprites.Length)];
-        }
+        // Ensure you don't roll the same Sprite twice in a row.
+        do newSprite = GetRandom(m_sprites);
         while (m_challengeCharacter.sprite == newSprite);
 
-        m_challengeCharacter.sprite = newSprite;
+        SetSprite(newSprite);
 
-        m_challengeText.text = m_challenges[r.Next(m_challenges.Length)];
+        SetChallengeText(GetRandom(m_challenges));
+    }
+
+    private void SetChallengeText(string _challenge)
+    {
+        m_challengeText.text = _challenge;
+    }
+
+    private void SetSprite(Sprite _sprite)
+    {
+        m_challengeCharacter.sprite = _sprite;
     }
 
     #endregion
 
     #region Tools Debug and Utility
+
+    private T GetRandom<T>(T[] _source, System.Random _r = null)
+    {
+        if (_r == null)
+            _r = m_r;
+
+        return _source[_r.Next(_source.Length)];
+    }
 
     #endregion
 
