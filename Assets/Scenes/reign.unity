@@ -142,7 +142,7 @@ RectTransform:
   - {fileID: 492512242}
   - {fileID: 425228684}
   m_Father: {fileID: 1785896398}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.1, y: 0.85}
   m_AnchorMax: {x: 0.9, y: 0.95}
@@ -471,6 +471,74 @@ RectTransform:
   m_PrefabParentObject: {fileID: 224761509290551176, guid: 17161db4ad6b891419b4c5f5c4111145,
     type: 2}
   m_PrefabInternal: {fileID: 2142888962}
+--- !u!1 &602812480
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 602812481}
+  - component: {fileID: 602812483}
+  - component: {fileID: 602812482}
+  m_Layer: 5
+  m_Name: ChallengeCharacter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &602812481
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 602812480}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1785896398}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &602812482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 602812480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &602812483
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 602812480}
 --- !u!1 &787508330
 GameObject:
   m_ObjectHideFlags: 0
@@ -573,7 +641,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1785896398}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.6}
   m_AnchorMax: {x: 1, y: 0.8}
@@ -755,7 +823,7 @@ RectTransform:
   m_Children:
   - {fileID: 787508331}
   m_Father: {fileID: 1785896398}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0.5, y: 1}
@@ -800,7 +868,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1011195400}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1785896399}
+        m_MethodName: PickAnswer
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1011195400
@@ -970,7 +1049,7 @@ RectTransform:
   m_Children:
   - {fileID: 421628576}
   m_Father: {fileID: 1785896398}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -1015,7 +1094,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1338434936}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1785896399}
+        m_MethodName: PickAnswer
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1338434936
@@ -1124,6 +1214,7 @@ GameObject:
   - component: {fileID: 1785896397}
   - component: {fileID: 1785896396}
   - component: {fileID: 1785896395}
+  - component: {fileID: 1785896399}
   m_Layer: 5
   m_Name: Interface Canvas
   m_TagString: Untagged
@@ -1198,6 +1289,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
+  - {fileID: 602812481}
   - {fileID: 1011195398}
   - {fileID: 1338434934}
   - {fileID: 131816409}
@@ -1210,6 +1302,36 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1785896399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1785896394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3463bda7dbdef70419471334e61d4a54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_sprites:
+  - {fileID: 21300000, guid: d62c3b6805d0a0f49aa7bebf95df3c28, type: 3}
+  - {fileID: 21300000, guid: a96da8305dcac884fbda989e7c53789e, type: 3}
+  - {fileID: 21300000, guid: 89ba20d86f6bc424cb2d0577d7bce6f1, type: 3}
+  - {fileID: 21300000, guid: a0bc86c73b5ba044c879cbd6fd8ced0a, type: 3}
+  - {fileID: 21300000, guid: 2235b430b514b884c9075c365f7ec652, type: 3}
+  - {fileID: 21300000, guid: 1feaed7d845880f408e9a4a4bc082446, type: 3}
+  - {fileID: 21300000, guid: 8f24d5823056d2b42919cc1d2799658e, type: 3}
+  - {fileID: 21300000, guid: 5c56db34c5b7a9541b4ce9b4fc8d4cd8, type: 3}
+  - {fileID: 21300000, guid: 4c827db05aedca74fbd0b6fac59c874f, type: 3}
+  - {fileID: 21300000, guid: b2be7d5ab073e224dbf8de4b46d1d5bf, type: 3}
+  m_challenges:
+  - Lorem Ipsum
+  - Foo bar
+  - 123456
+  m_challengeCharacter: {fileID: 602812482}
+  m_challengeText: {fileID: 998676001}
+  m_indicatorManager: {fileID: 131816413}
+  m_indicators: []
 --- !u!1 &1826637121
 GameObject:
   m_ObjectHideFlags: 0
